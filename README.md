@@ -9,6 +9,7 @@ OpenClaw技能集合 - 包含各种Channel配置技能
 | [钉钉Channel配置](./dingtalk-channel-setup/) | 快速配置钉钉机器人与OpenClaw的集成 | [GUIDE.md](./dingtalk-channel-setup/GUIDE.md) |
 | [飞书Channel配置](./feishu-channel-skill/) | 快速配置飞书机器人与OpenClaw的集成 | [GUIDE.md](./feishu-channel-skill/GUIDE.md) |
 | [企业微信机器人配置](./skills/wecom-bot-setup/) | 快速配置企业微信智能机器人与OpenClaw的集成 | [SKILL.md](./skills/wecom-bot-setup/SKILL.md) |
+| [微信ClawBot配置](./skills/weixin-clawbot-setup/) | 快速配置微信ClawBot插件与OpenClaw的集成 | [SKILL.md](./skills/weixin-clawbot-setup/SKILL.md) |
 
 ## 快速开始
 
@@ -43,12 +44,15 @@ OpenClawSkills/
 │   └── scripts/
 │       └── configure.sh         # 自动配置脚本
 └── skills/
-    └── wecom-bot-setup/         # 企业微信机器人配置技能
+    ├── wecom-bot-setup/         # 企业微信机器人配置技能
+    │   ├── SKILL.md             # 技能定义
+    │   ├── scripts/
+    │   │   └── setup_wecom_bot.py  # 自动配置脚本
+    │   └── references/
+    │       └── quick-reference.md  # 快速参考
+    └── weixin-clawbot-setup/    # 微信ClawBot配置技能
         ├── SKILL.md             # 技能定义
-        ├── scripts/
-        │   └── setup_wecom_bot.py  # 自动配置脚本
-        └── references/
-            └── quick-reference.md  # 快速参考
+        └── README.md            # 说明文档
 ```
 
 ## 贡献
