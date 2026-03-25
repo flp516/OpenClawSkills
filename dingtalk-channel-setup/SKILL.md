@@ -4,7 +4,7 @@ description: 钉钉Channel配置技能。帮助用户快速配置钉钉机器人
 license: MIT
 metadata:
   author: flp516
-  version: "2.0"
+  version: "3.0"
 ---
 
 # 钉钉 Channel 配置技能
@@ -13,7 +13,7 @@ metadata:
 
 ## 功能描述
 
-- 安装钉钉Channel插件 (`clawdbot-dingtalk` - OpenClaw官方插件)
+- 安装钉钉Channel插件 (`@dingtalk-real-ai/dingtalk-connector` - 钉钉官方插件)
 - 配置OpenClaw的 `openclaw.json` 文件
 - 重启Gateway服务
 - 验证配置状态
@@ -44,7 +44,7 @@ metadata:
 mkdir -p ~/.openclaw/extensions/dingtalk
 cd ~/.openclaw/extensions/dingtalk
 npm init -y
-npm install clawdbot-dingtalk@latest
+npm install @dingtalk-real-ai/dingtalk-connector@latest
 ```
 
 ### 2. 配置 openclaw.json
@@ -68,8 +68,8 @@ npm install clawdbot-dingtalk@latest
   "installs": {
     "dingtalk": {
       "source": "npm",
-      "spec": "clawdbot-dingtalk@latest",
-      "installPath": "/home/sandbox/.openclaw/extensions/dingtalk/node_modules/clawdbot-dingtalk",
+      "spec": "@dingtalk-real-ai/dingtalk-connector@latest",
+      "installPath": "/home/sandbox/.openclaw/extensions/dingtalk/node_modules/@dingtalk-real-ai/dingtalk-connector",
       "version": "1.0.0"
     }
   },
@@ -78,7 +78,7 @@ npm install clawdbot-dingtalk@latest
     "load": {
       "paths": [
         "/home/sandbox/openclaw/node_modules/openclaw/extensions/feishu",
-        "/home/sandbox/.openclaw/extensions/dingtalk/node_modules/clawdbot-dingtalk"
+        "/home/sandbox/.openclaw/extensions/dingtalk/node_modules/@dingtalk-real-ai/dingtalk-connector"
       ]
     }
   }
@@ -148,19 +148,23 @@ tail -100 /tmp/openclaw/openclaw-$(date +%Y-%m-%d).log | grep -i "DingTalk"
 
 ## 插件信息
 
-- **包名**: `clawdbot-dingtalk`
-- **来源**: OpenClaw官方
+- **包名**: `@dingtalk-real-ai/dingtalk-connector`
+- **来源**: 钉钉官方 (DingTalk Real AI)
 - **Channel ID**: `dingtalk`
 - **功能**: Stream模式、私聊/群聊、图片/文件消息
 
 ## 更新日志
 
+### v3.0
+- 插件来源更新为钉钉官方 `@dingtalk-real-ai/dingtalk-connector`
+- 来自 DingTalk-Real-AI 官方组织
+
 ### v2.0
 - 插件来源从 `@largezhou/ddingtalk` 更新为 OpenClaw 官方 `clawdbot-dingtalk`
-- Channel ID 从 `ddingtalk` 统一为 `dingtalk`
 
 ## 相关链接
 
 - [钉钉开发者平台](https://open-dev.dingtalk.com/)
 - [钉钉机器人文档](https://open.dingtalk.com/document/org/robot-overview)
 - [OpenClaw文档](https://docs.openclaw.ai)
+- [DingTalk Real AI](https://github.com/DingTalk-Real-AI)
