@@ -4,7 +4,7 @@ description: 钉钉Channel配置技能。帮助用户快速配置钉钉机器人
 license: MIT
 metadata:
   author: flp516
-  version: "1.0"
+  version: "2.0"
 ---
 
 # 钉钉 Channel 配置技能
@@ -13,7 +13,7 @@ metadata:
 
 ## 功能描述
 
-- 安装钉钉Channel插件 (`@largezhou/ddingtalk`)
+- 安装钉钉Channel插件 (`clawdbot-dingtalk` - OpenClaw官方插件)
 - 配置OpenClaw的 `openclaw.json` 文件
 - 重启Gateway服务
 - 验证配置状态
@@ -41,10 +41,10 @@ metadata:
 ### 1. 安装插件
 
 ```bash
-mkdir -p ~/.openclaw/extensions/ddingtalk
-cd ~/.openclaw/extensions/ddingtalk
+mkdir -p ~/.openclaw/extensions/dingtalk
+cd ~/.openclaw/extensions/dingtalk
 npm init -y
-npm install @largezhou/ddingtalk@latest
+npm install clawdbot-dingtalk@latest
 ```
 
 ### 2. 配置 openclaw.json
@@ -54,31 +54,31 @@ npm install @largezhou/ddingtalk@latest
 ```json
 {
   "channels": {
-    "ddingtalk": {
+    "dingtalk": {
       "clientId": "你的Client ID",
       "clientSecret": "你的Client Secret",
       "enabled": true
     }
   },
   "entries": {
-    "ddingtalk": {
+    "dingtalk": {
       "enabled": true
     }
   },
   "installs": {
-    "ddingtalk": {
+    "dingtalk": {
       "source": "npm",
-      "spec": "@largezhou/ddingtalk@latest",
-      "installPath": "/home/sandbox/.openclaw/extensions/ddingtalk/node_modules/@largezhou/ddingtalk",
-      "version": "1.4.1"
+      "spec": "clawdbot-dingtalk@latest",
+      "installPath": "/home/sandbox/.openclaw/extensions/dingtalk/node_modules/clawdbot-dingtalk",
+      "version": "1.0.0"
     }
   },
   "plugins": {
-    "allow": ["feishu", "ddingtalk", "xiaoyi-channel"],
+    "allow": ["feishu", "dingtalk", "xiaoyi-channel"],
     "load": {
       "paths": [
         "/home/sandbox/openclaw/node_modules/openclaw/extensions/feishu",
-        "/home/sandbox/.openclaw/extensions/ddingtalk/node_modules/@largezhou/ddingtalk"
+        "/home/sandbox/.openclaw/extensions/dingtalk/node_modules/clawdbot-dingtalk"
       ]
     }
   }
@@ -99,13 +99,13 @@ openclaw gateway
 tail -100 /tmp/openclaw/openclaw-$(date +%Y-%m-%d).log | grep -i "DingTalk"
 
 # 应该看到:
-# [gateway/channels/ddingtalk] [default] starting DingTalk provider
+# [gateway/channels/dingtalk] [default] starting DingTalk provider
 # DingTalk: configured
 ```
 
 ## 常见问题
 
-### Q: 日志显示 "unknown channel id: ddingtalk"
+### Q: 日志显示 "unknown channel id: dingtalk"
 
 **原因**: 插件未正确加载或配置文件未更新
 
@@ -119,7 +119,7 @@ tail -100 /tmp/openclaw/openclaw-$(date +%Y-%m-%d).log | grep -i "DingTalk"
 **原因**: 缺少 Client ID 或 Client Secret
 
 **解决方案**:
-1. 检查 `channels.ddingtalk` 配置
+1. 检查 `channels.dingtalk` 配置
 2. 确认凭证正确
 
 ### Q: 机器人搜索不到
@@ -148,10 +148,16 @@ tail -100 /tmp/openclaw/openclaw-$(date +%Y-%m-%d).log | grep -i "DingTalk"
 
 ## 插件信息
 
-- **包名**: `@largezhou/ddingtalk`
-- **版本**: 1.4.1
-- **Channel ID**: `ddingtalk`
+- **包名**: `clawdbot-dingtalk`
+- **来源**: OpenClaw官方
+- **Channel ID**: `dingtalk`
 - **功能**: Stream模式、私聊/群聊、图片/文件消息
+
+## 更新日志
+
+### v2.0
+- 插件来源从 `@largezhou/ddingtalk` 更新为 OpenClaw 官方 `clawdbot-dingtalk`
+- Channel ID 从 `ddingtalk` 统一为 `dingtalk`
 
 ## 相关链接
 
