@@ -1,13 +1,13 @@
 ---
-name: weibo-lobster-setup
-description: 安装和配置微博龙虾助手（Weibo OpenClaw Plugin）。当用户要求安装微博龙虾插件、配置微博小龙虾助手、设置微博 OpenClaw 插件时使用此技能。支持从 Gitee 安装官方插件、配置 AppId/AppSecret 凭证、验证连接状态。
+name: weibo-clawbot-setup
+description: 安装和配置微博 ClawBot 插件（Weibo OpenClaw Plugin）。当用户要求安装微博插件、配置微博 ClawBot、设置微博 OpenClaw 插件时使用此技能。支持从 Gitee 安装官方插件、配置 AppId/AppSecret 凭证、验证连接状态。
 ---
 
-# 微博龙虾助手安装配置指南
+# 微博 ClawBot 安装配置指南
 
 ## 概述
 
-微博龙虾助手是微博官方推出的 OpenClaw 插件，支持通过微博私信与龙虾助手对话，以及调用微博相关工具（热搜、智搜、用户微博等）。
+微博 ClawBot 是微博官方推出的 OpenClaw 插件，支持通过微博私信与 ClawBot 对话，以及调用微博相关工具（热搜、智搜、用户微博等）。
 
 ## 安装流程
 
@@ -40,8 +40,8 @@ openclaw plugins install @wecode-ai/weibo-openclaw-plugin
 
 ### 步骤 4：配置凭证
 
-1. 打开微博客户端，私信 **@微博龙虾助手**（用户ID：6808810981）
-2. 发送消息：`连接龙虾`
+1. 打开微博客户端，私信 **@微博ClawBot助手**（用户ID：6808810981）
+2. 发送消息：`连接ClawBot`
 3. 收到回复后，获取 `AppId` 和 `AppSecret`
 
 配置凭证：
