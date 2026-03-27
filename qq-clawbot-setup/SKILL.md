@@ -1,6 +1,10 @@
 ---
 name: qq-clawbot-setup
 description: 安装和配置 QQ ClawBot 插件（QQ OpenClaw Plugin）。当用户要求安装 QQ 插件、配置 QQ 机器人、设置 QQ 消息通道时使用此技能。支持安装官方插件、配置 AppId/AppSecret 凭证、验证连接状态。
+license: MIT
+metadata:
+  author: flp516
+  version: "2.0"
 ---
 
 # QQ ClawBot 安装配置指南
@@ -140,47 +144,8 @@ tail -100 /tmp/openclaw/openclaw-$(date +%Y-%m-%d).log | grep -i qqbot
 4. 在「基本信息」页面查看 AppID
 5. 在「开发设置」页面查看或重置 AppSecret
 
-### Q: allowFrom 是空的怎么办？
+## 相关链接
 
-如果 `allowFrom=[]`，机器人不会响应任何消息。确保配置正确：
-```bash
-openclaw config get channels.qqbot
-```
-
-应该看到 `allowFrom: ["*"]`（允许所有用户）。
-
-## 脚本资源
-
-### scripts/test_qqbot_api.js
-
-测试 QQ Bot API 连接和功能的脚本。
-
-使用方法：
-```bash
-node scripts/test_qqbot_api.js --appId <appId> --clientSecret <clientSecret>
-```
-
-## 注意事项
-
-1. **凭证安全**：AppID 和 clientSecret 是敏感信息，不要泄露给他人
-2. **官方来源**：只从 npm 安装官方插件 `@tencent-connect/openclaw-qqbot`
-3. **权限问题**：插件目录权限必须是 `755`，不能是 `777`
-4. **API 限制**：QQ 开放平台 API 可能有调用频率限制，注意控制请求频率
-5. **沙箱环境**：开发阶段机器人处于沙箱环境，只有测试用户才能使用
-
-## 完整配置示例
-
-```json
-{
-  "channels": {
-    "qqbot": {
-      "appId": "1903685061",
-      "clientSecret": "your-client-secret",
-      "allowFrom": ["*"]
-    }
-  },
-  "plugins": {
-    "allow": ["openclaw-qqbot", "weibo-openclaw-plugin", "xiaoyi-channel"]
-  }
-}
-```
+- [QQ 开放平台](https://q.qq.com/)
+- [OpenClaw 文档](https://docs.openclaw.ai)
+- [ClawHub 技能市场](https://clawhub.com)
